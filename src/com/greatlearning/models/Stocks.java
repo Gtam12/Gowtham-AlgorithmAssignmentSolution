@@ -11,7 +11,7 @@ public class Stocks {
 	}
 
 	public void setStockPrice(double stockPrice) {
-		this.stockPrice  = new double[(int) stockPrice];
+		this.stockPrice  = {stockPrice};
 	}
 
 	public String isPriceHigherThanYesterday() {
