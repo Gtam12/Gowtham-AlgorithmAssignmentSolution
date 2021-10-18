@@ -4,13 +4,13 @@ import java.util.ArrayList;
 
 import com.greatlearning.models.Stocks;
 import com.greatlearning.services.SortDescending;
-import com.greatlearning.services.SortAscneding;
+
 
 public class StockerService {
 	
 	
 	static Stocks stocks = new Stocks();
-	static SortDescending sortD = new SortDesecending();
+	static SortDescending sortD;
 	
 	public static ArrayList<Double> stocksInAscendingOrder() {
 		
@@ -21,8 +21,9 @@ public class StockerService {
 	
 	
 	
-	public static double[] stocksInDescendingOrder() {
+	public static void stocksInDescendingOrder() {
 		
+		 sortD.sort(stocks.getStockPrice(), 0, stocks.getStockPrice().size()-1);
 	
 	}
 	
