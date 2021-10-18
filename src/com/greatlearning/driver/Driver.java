@@ -1,6 +1,5 @@
 package com.greatlearning.driver;
 
-
 import java.util.Scanner;
 import com.greatlearning.models.Stocks;
 import com.greatlearning.services.StockerService;
@@ -34,19 +33,24 @@ public class Driver {
 		System.out.println("-----------------------------");
 
 		int choice = sc.nextInt();
-		
-		switch(choice) {
-		
+
+		switch (choice) {
+
 		case 1:
 			StockerService.stocksInDescendingOrder();
-			System.out.println(stocks.getStockPrice());	
-		    System.out.println(StockerService.isPriceHigher());
+			System.out.println(stocks.getStockPrice());
+			System.out.println(StockerService.isPriceHigher());
 		
-		
+			break;
+		case 2:
+			StockerService.stocksInAscendingOrder();
+			System.out.println(stocks.getStockPrice());
+			System.out.println(StockerService.isPriceHigher());
+			
+			
+
 		}
-		
-		
-		
+
 	}
 
 }

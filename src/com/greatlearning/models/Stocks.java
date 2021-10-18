@@ -7,7 +7,7 @@ public class Stocks {
 	
 	public   String isPriceHigherThanYesterday;
 
-	public  ArrayList<Double> getStockPrice() {
+	public ArrayList<Double> getStockPrice() {
 
 		return stockPrice;
 		

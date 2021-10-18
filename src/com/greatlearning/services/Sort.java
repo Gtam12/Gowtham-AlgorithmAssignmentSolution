@@ -3,7 +3,6 @@ package com.greatlearning.services;
 import java.util.ArrayList;
 
 public class Sort {
-	
 
 	void merge(ArrayList<Double> notes, int left, int mid, int right) {
 		// Find sizes of two sub arrays to be merged
@@ -16,9 +15,9 @@ public class Sort {
 
 		/* Copy data to temporary arrays */
 		for (int i = 0; i < n1; ++i)
-			leftArray[i] =  notes.get(left+i);
+			leftArray[i] = notes.get(left + i);
 		for (int j = 0; j < n2; ++j)
-			rightArray[j] =  notes.get(mid + 1 + j);
+			rightArray[j] = notes.get(mid + 1 + j);
 
 		/* Merge the temporary arrays */
 
@@ -40,15 +39,13 @@ public class Sort {
 
 		/* Copy remaining elements of L[] if any */
 		while (i < n1) {
-			notes.set(k, leftArray[i]) ;
+			notes.set(k, leftArray[i]);
 			i++;
 			k++;
 		}
 
-		
-		
 		while (j < n2) {
-			notes.set(k,rightArray[j]);
+			notes.set(k, rightArray[j]);
 			j++;
 			k++;
 		}
@@ -65,13 +62,12 @@ public class Sort {
 			sort(notes, mid + 1, right, true);
 
 			// Merge the sorted halves
-			if(!ascending) {
-			merge(notes, left, mid, right);
-			}
-			else {
+			if (!ascending) {
+				merge(notes, left, mid, right);
+			} else {
 				merge(notes, right, mid, left);
 			}
-			
+
 		}
 	}
 
