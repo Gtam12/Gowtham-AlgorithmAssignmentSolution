@@ -3,27 +3,24 @@ package com.greatlearning.services;
 import java.util.ArrayList;
 
 import com.greatlearning.models.Stocks;
-import com.greatlearning.services.SortDescending;
+
 
 
 public class StockerService {
 	
 	
 	static Stocks stocks = new Stocks();
-	static SortDescending sortD;
+	static Sort sort;
 	
-	public static ArrayList<Double> stocksInAscendingOrder() {
-		
-
-		
-		return stocks.getStockPrice();
+	public static void stocksInAscendingOrder() {	
+		sort.sort(stocks.getStockPrice(), 0, stocks.getStockPrice().size()-1, true);
 	}
 	
 	
 	
 	public static void stocksInDescendingOrder() {
 		
-		 sortD.sort(stocks.getStockPrice(), 0, stocks.getStockPrice().size()-1);
+		 sort.sort(stocks.getStockPrice(), 0, stocks.getStockPrice().size()-1, false);
 	
 	}
 	

@@ -2,7 +2,7 @@ package com.greatlearning.services;
 
 import java.util.ArrayList;
 
-public class SortDescending {
+public class Sort {
 	
 
 	void merge(ArrayList<Double> notes, int left, int mid, int right) {
@@ -55,17 +55,22 @@ public class SortDescending {
 	}
 
 	// Main function that sorts array[left...right] using merge()
-	public void sort(ArrayList<Double> notes, int left, int right) {
+	public void sort(ArrayList<Double> notes, int left, int right, boolean ascending) {
 		if (left < right) {
 			// Find the middle point
 			int mid = (left + right) / 2;
 
 			// Sort first and second halves
-			sort(notes, left, mid);
-			sort(notes, mid + 1, right);
+			sort(notes, left, mid, true);
+			sort(notes, mid + 1, right, true);
 
 			// Merge the sorted halves
+			if(!ascending) {
 			merge(notes, left, mid, right);
+			}
+			else {
+				merge(notes, right, mid, left);
+			}
 			
 		}
 	}
