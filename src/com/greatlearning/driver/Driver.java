@@ -57,6 +57,7 @@ public class Driver {
 				break;
 
 			case 5:
+				System.out.println("Enter the stock to search");
 				double key = sc.nextDouble();
 				StockerService.isStockAvailableInPortfolio(key);
 				break;
