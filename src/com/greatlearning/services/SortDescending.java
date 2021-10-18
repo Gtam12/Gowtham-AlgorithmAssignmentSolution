@@ -1,22 +1,24 @@
 package com.greatlearning.services;
 
+import java.util.ArrayList;
+
 public class SortDescending {
 	
 
-	void merge(int arr[], int left, int mid, int right) {
+	void merge(ArrayList<Double> notes, int left, int mid, int right) {
 		// Find sizes of two sub arrays to be merged
 		int n1 = mid - left + 1;
 		int n2 = right - mid;
 
 		/* Create temporary arrays */
-		int leftArray[] = new int[n1];
-		int rightArray[] = new int[n2];
+		double leftArray[] = new double[n1];
+		double rightArray[] = new double[n2];
 
 		/* Copy data to temporary arrays */
 		for (int i = 0; i < n1; ++i)
-			leftArray[i] = arr[left + i];
+			leftArray[i] =  notes.get(left+i);
 		for (int j = 0; j < n2; ++j)
-			rightArray[j] = arr[mid + 1 + j];
+			rightArray[j] =  notes.get(mid + 1 + j);
 
 		/* Merge the temporary arrays */
 
@@ -27,10 +29,10 @@ public class SortDescending {
 		int k = left;
 		while (i < n1 && j < n2) {
 			if (leftArray[i] >= rightArray[j]) {
-				arr[k] = leftArray[i];
+				notes.set(k, leftArray[i]);
 				i++;
 			} else {
-				arr[k] = rightArray[j];
+				notes.set(i, rightArray[j]);
 				j++;
 			}
 			k++;
@@ -38,7 +40,7 @@ public class SortDescending {
 
 		/* Copy remaining elements of L[] if any */
 		while (i < n1) {
-			arr[k] = leftArray[i];
+			notes.set(k, leftArray[i]) ;
 			i++;
 			k++;
 		}
@@ -46,14 +48,14 @@ public class SortDescending {
 		
 		
 		while (j < n2) {
-			arr[k] = rightArray[j];
+			notes.set(k,rightArray[j]);
 			j++;
 			k++;
 		}
 	}
 
 	// Main function that sorts array[left...right] using merge()
-	public void sort(int[] notes, int left, int right) {
+	public void sort(ArrayList<Double> notes, int left, int right) {
 		if (left < right) {
 			// Find the middle point
 			int mid = (left + right) / 2;

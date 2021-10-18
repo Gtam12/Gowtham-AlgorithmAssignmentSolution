@@ -38,8 +38,8 @@ public class Driver {
 		switch(choice) {
 		
 		case 1:
-			System.out.println(stockerService.stocksInAscendingOrder());	
-		    System.out.println(stockerService.isPriceHigher());
+			System.out.println(StockerService.stocksInAscendingOrder());	
+		    System.out.println(StockerService.isPriceHigher());
 		
 		
 		}

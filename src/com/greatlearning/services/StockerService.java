@@ -2,21 +2,31 @@ package com.greatlearning.services;
 
 import java.util.ArrayList;
 
-import com.greatlearning.models.Stocks;;
+import com.greatlearning.models.Stocks;
+import com.greatlearning.services.SortDescending;
+import com.greatlearning.services.SortAscneding;
 
 public class StockerService {
 	
 	
 	static Stocks stocks = new Stocks();
+	static SortDescending sortD = new SortDesecending();
 	
 	public static ArrayList<Double> stocksInAscendingOrder() {
 		
-		ArrayList<Double> stocksInAscending = new ArrayList<Double>(stocks.getStockPrice());
+
 		
-		
-		
-		return stocksInAscending;
+		return stocks.getStockPrice();
 	}
+	
+	
+	
+	public static double[] stocksInDescendingOrder() {
+		
+	
+	}
+	
+	
 	
 	
 	public static String isPriceHigher() {
