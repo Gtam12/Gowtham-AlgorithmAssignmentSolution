@@ -42,27 +42,33 @@ public class Driver {
 
 		int choice = displayMenu();
 
-		while (choice != 0) {
-			switch (choice) {
+		switch (choice) {
 
-			case 1:
-				StockerService.stocksInDescendingOrder();
-				System.out.println(stocks.getStockPrice());
-				System.out.println(StockerService.isPriceHigher());
-				break;
-			case 2:
-				StockerService.stocksInAscendingOrder();
-				System.out.println(stocks.getStockPrice());
-				System.out.println(StockerService.isPriceHigher());
-				break;
+		case 0:
+			System.out.println("Exited Succesfully");
+			return;
 
-			case 5:
-				System.out.println("Enter the stock to search");
-				double key = sc.nextDouble();
-				StockerService.isStockAvailableInPortfolio(key);
-				break;
-				
-			}
+		case 1:
+			StockerService.stocksInDescendingOrder();
+			System.out.println(stocks.getStockPrice());
+			System.out.println(StockerService.isPriceHigher());
+			break;
+		case 2:
+			StockerService.stocksInAscendingOrder();
+			System.out.println(stocks.getStockPrice());
+			System.out.println(StockerService.isPriceHigher());
+			break;
+
+		case 5:
+			System.out.println("Enter the stock to search");
+			double key = sc.nextDouble();
+			StockerService.isStockAvailableInPortfolio(key);
+			break;
+
+		default:
+
+			break;
+
 		}
 
 	}
