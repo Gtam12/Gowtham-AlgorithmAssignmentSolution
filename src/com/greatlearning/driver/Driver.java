@@ -1,5 +1,6 @@
 package com.greatlearning.driver;
 
+
 import java.util.Scanner;
 import com.greatlearning.models.Stocks;
 import com.greatlearning.services.StockerService;
@@ -19,7 +20,6 @@ public class Driver {
 		for (int i = 0; i < numberOfCompanies; i++) {
 
 			System.out.println("Enter current stock price of the company " + ((int) i + 1));
-			
 			stocks.setStockPrice(sc.nextDouble());
 			stocks.setPriceHigherThanYesterday(sc.next());
 
@@ -38,8 +38,8 @@ public class Driver {
 		switch(choice) {
 		
 		case 1:
-			stockerService.stocksInAscendingOrder();	
-		
+			System.out.println(stockerService.stocksInAscendingOrder());	
+		    System.out.println(stockerService.isPriceHigher());
 		
 		
 		}

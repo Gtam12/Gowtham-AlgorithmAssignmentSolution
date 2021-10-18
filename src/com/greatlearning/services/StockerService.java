@@ -1,19 +1,26 @@
 package com.greatlearning.services;
 
+import java.util.ArrayList;
+
 import com.greatlearning.models.Stocks;;
 
 public class StockerService {
 	
 	
-	Stocks stocks = new Stocks();
+	static Stocks stocks = new Stocks();
 	
-	public double[] stocksInAscendingOrder() {
+	public static ArrayList<Double> stocksInAscendingOrder() {
 		
-		double[] stocksInAscending = stocks.getStockPrice();
+		ArrayList<Double> stocksInAscending = new ArrayList<Double>(stocks.getStockPrice());
 		
 		
 		
 		return stocksInAscending;
+	}
+	
+	
+	public static String isPriceHigher() {
+		return stocks.isPriceHigherThanYesterday();
 	}
 	
 
