@@ -35,8 +35,8 @@ public class Driver {
 		for (int i = 0; i < numberOfCompanies; i++) {
 
 			System.out.println("Enter current stock price of the company " + ((int) i + 1));
-			stocks.setStockPrice(numberOfCompanies,sc.nextDouble());
-			stocks.setPriceHigherThanYesterday(numberOfCompanies,sc.next());
+			stocks.setStockPrice(numberOfCompanies, sc.nextDouble());
+			stocks.setPriceHigherThanYesterday(numberOfCompanies, sc.next());
 
 		}
 
@@ -57,6 +57,14 @@ public class Driver {
 			StockerService.stocksInAscendingOrder();
 			System.out.println(stocks.getStockPrice());
 			System.out.println(StockerService.isPriceHigher());
+			break;
+
+		case 3:
+			StockerService.priceIncreasedStocks();
+			break;
+
+		case 4:
+			StockerService.priceDecreasedStocks();
 			break;
 
 		case 5:
