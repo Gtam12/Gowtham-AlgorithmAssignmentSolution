@@ -35,8 +35,8 @@ public class Driver {
 		for (int i = 0; i < numberOfCompanies; i++) {
 
 			System.out.println("Enter current stock price of the company " + ((int) i + 1));
-			stocks.setStockPrice(sc.nextDouble());
-			stocks.setPriceHigherThanYesterday(sc.next());
+			stocks.setStockPrice(numberOfCompanies,sc.nextDouble());
+			stocks.setPriceHigherThanYesterday(numberOfCompanies,sc.next());
 
 		}
 

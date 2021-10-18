@@ -3,26 +3,32 @@ import java.util.*;
 
 public class Stocks {
 	
-	public   ArrayList<Double> stockPrice = new ArrayList<Double>();
+	public   HashMap<Integer, Double> stockPrice = new HashMap<Integer, Double>();
 	
-	public   String isPriceHigherThanYesterday;
+	public   HashMap<Integer, String> isPriceHigherThanYesterday = new HashMap<Integer, String>();
 
-	public ArrayList<Double> getStockPrice() {
+	public HashMap<Integer,Double> getStockPrice() {
 
 		return stockPrice;
 		
 	}
 
-	public void setStockPrice(Double stockPrice) {	
-		this.stockPrice.add(stockPrice);		
+	public void setStockPrice(int size,double stockPrice) {	
+		for(int i=0; i<size; i++)
+		{
+		this.stockPrice.put(i, stockPrice);	
+		}
 	}
 
-	public String isPriceHigherThanYesterday() {
+	public HashMap<Integer, String> isPriceHigherThanYesterday() {
 		return isPriceHigherThanYesterday;
 	}
 
-	public void setPriceHigherThanYesterday(String isPriceHigherThanYesterday) {
-		this.isPriceHigherThanYesterday = isPriceHigherThanYesterday;
+	public void setPriceHigherThanYesterday(int size, String isPriceHigherThanYesterday) {
+		for(int i=0;i<size;i++)
+		{
+		this.isPriceHigherThanYesterday.put(i, isPriceHigherThanYesterday);
+		}
 	}
 	
 	

@@ -1,10 +1,10 @@
 package com.greatlearning.services;
 
-import java.util.ArrayList;
+import java.util.HashMap;
 
-public class Sort {
+public class SortDescending {
 
-	void merge(ArrayList<Double> notes, int left, int mid, int right) {
+	void merge(HashMap<Integer,Double> notes, int left, int mid, int right) {
 		// Find sizes of two sub arrays to be merged
 		int n1 = mid - left + 1;
 		int n2 = right - mid;
@@ -28,10 +28,10 @@ public class Sort {
 		int k = left;
 		while (i < n1 && j < n2) {
 			if (leftArray[i] >= rightArray[j]) {
-				notes.set(k, leftArray[i]);
+				notes.put(k, leftArray[i]);
 				i++;
 			} else {
-				notes.set(i, rightArray[j]);
+				notes.put(i, rightArray[j]);
 				j++;
 			}
 			k++;
@@ -39,34 +39,32 @@ public class Sort {
 
 		/* Copy remaining elements of L[] if any */
 		while (i < n1) {
-			notes.set(k, leftArray[i]);
+			notes.put(k, leftArray[i]);
 			i++;
 			k++;
 		}
 
 		while (j < n2) {
-			notes.set(k, rightArray[j]);
+			notes.put(k, rightArray[j]);
 			j++;
 			k++;
 		}
 	}
 
 	// Main function that sorts array[left...right] using merge()
-	public void sort(ArrayList<Double> notes, int left, int right, boolean ascending) {
+	public void sort(HashMap<Integer,Double> notes, int left, int right) {
 		if (left < right) {
 			// Find the middle point
 			int mid = (left + right) / 2;
 
 			// Sort first and second halves
-			sort(notes, left, mid, true);
-			sort(notes, mid + 1, right, true);
+			sort(notes, left, mid);
+			sort(notes, mid + 1, right);
 
 			// Merge the sorted halves
-			if (!ascending) {
+			
 				merge(notes, left, mid, right);
-			} else {
-				merge(notes, right, mid, left);
-			}
+			
 
 		}
 	}

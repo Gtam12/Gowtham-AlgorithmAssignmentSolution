@@ -1,25 +1,26 @@
 package com.greatlearning.services;
 
-import java.util.ArrayList;
+import java.util.HashMap;
 
 import com.greatlearning.models.Stocks;
 
 public class StockerService {
 
 	static Stocks stocks = new Stocks();
-	static Sort sort;
+	static SortDescending sortD;
+	static SortAscending sortA;
 
 	public static void stocksInAscendingOrder() {
-		sort.sort(stocks.getStockPrice(), 0, stocks.getStockPrice().size() - 1, true);
+		sortA.sort(stocks.getStockPrice(), 0, stocks.getStockPrice().size() - 1);
 	}
 
 	public static void stocksInDescendingOrder() {
 
-		sort.sort(stocks.getStockPrice(), 0, stocks.getStockPrice().size() - 1, false);
+		sortD.sort(stocks.getStockPrice(), 0, stocks.getStockPrice().size() - 1);
 
 	}
 
-	public static String isPriceHigher() {
+	public static HashMap<Integer, String> isPriceHigher() {
 		return stocks.isPriceHigherThanYesterday();
 	}
 	
@@ -28,7 +29,7 @@ public class StockerService {
 		int first = 0;
 		int last = stocks.getStockPrice().size()-1;
 		int mid = (first+last)/2;
-		ArrayList<Double> prtfl = new ArrayList<Double>(stocks.getStockPrice());
+		HashMap<Integer,Double> prtfl = new HashMap<Integer,Double>(stocks.getStockPrice());
 		while(first<=last) {
 			if(prtfl.get(mid) == key) {
 				System.out.println("Stock" + key + "found");
@@ -48,4 +49,5 @@ public class StockerService {
 		
 	}
 
+	
 }
