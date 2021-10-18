@@ -49,13 +49,18 @@ public class Driver {
 				StockerService.stocksInDescendingOrder();
 				System.out.println(stocks.getStockPrice());
 				System.out.println(StockerService.isPriceHigher());
-
 				break;
 			case 2:
 				StockerService.stocksInAscendingOrder();
 				System.out.println(stocks.getStockPrice());
 				System.out.println(StockerService.isPriceHigher());
+				break;
 
+			case 5:
+				double key = sc.nextDouble();
+				StockerService.isStockAvailableInPortfolio(key);
+				break;
+				
 			}
 		}
 
