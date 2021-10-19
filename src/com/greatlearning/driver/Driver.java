@@ -52,11 +52,9 @@ public class Driver {
 
 		case 1:
 			stockerService.stocksInAscendingOrder(stocks);
-			System.out.println(stockerService.isPriceHigher(stocks));
 			break;
 		case 2:
 			stockerService.stocksInDescendingOrder(stocks);
-			System.out.println(stockerService.isPriceHigher(stocks));
 			break;
 
 		case 3:
