@@ -30,19 +30,8 @@ public class Driver {
 	}
 
 	public static void main(String[] args) {
-		
-		HashMap<Integer, Double> hs = new HashMap<Integer, Double>();
-		hs.put(1, 19.00);
-		hs.put(2, 34.00);
-		hs.put(3, 53.00);
-		hs.put(4, 66.00);
-		hs.put(5, 28.00);
-		
-	
-		System.out.println("enter the no of companies");
-		
-		
 
+		System.out.println("enter the no of companies");
 		int numberOfCompanies = sc.nextInt();
 
 		for (int i = 0; i < numberOfCompanies; i++) {
@@ -62,12 +51,12 @@ public class Driver {
 			return;
 
 		case 1:
-			StockerService.stocksInDescendingOrder();
+			StockerService.stocksInAscendingOrder();
 			System.out.println(stocks.getStockPrice());
 			System.out.println(StockerService.isPriceHigher());
 			break;
 		case 2:
-			StockerService.stocksInAscendingOrder();
+			StockerService.stocksInDescendingOrder();
 			System.out.println(stocks.getStockPrice());
 			System.out.println(StockerService.isPriceHigher());
 			break;

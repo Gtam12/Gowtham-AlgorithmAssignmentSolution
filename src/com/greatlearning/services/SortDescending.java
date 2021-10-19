@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 public class SortDescending {
 
-	void merge(HashMap<Integer,Double> notes, int left, int mid, int right) {
+	void merge(HashMap<Integer,Double> shares, int left, int mid, int right) {
 		// Find sizes of two sub arrays to be merged
 		int n1 = mid - left + 1;
 		int n2 = right - mid;
@@ -15,9 +15,9 @@ public class SortDescending {
 
 		/* Copy data to temporary arrays */
 		for (int i = 0; i < n1; ++i)
-			leftArray[i] = notes.get(left + i);
+			leftArray[i] = shares.get(left + i);
 		for (int j = 0; j < n2; ++j)
-			rightArray[j] = notes.get(mid + 1 + j);
+			rightArray[j] = shares.get(mid + 1 + j);
 
 		/* Merge the temporary arrays */
 
@@ -28,10 +28,10 @@ public class SortDescending {
 		int k = left;
 		while (i < n1 && j < n2) {
 			if (leftArray[i] >= rightArray[j]) {
-				notes.put(k, leftArray[i]);
+				shares.put(k, leftArray[i]);
 				i++;
 			} else {
-				notes.put(i, rightArray[j]);
+				shares.put(i, rightArray[j]);
 				j++;
 			}
 			k++;
@@ -39,13 +39,13 @@ public class SortDescending {
 
 		/* Copy remaining elements of L[] if any */
 		while (i < n1) {
-			notes.put(k, leftArray[i]);
+			shares.put(k, leftArray[i]);
 			i++;
 			k++;
 		}
 
 		while (j < n2) {
-			notes.put(k, rightArray[j]);
+			shares.put(k, rightArray[j]);
 			j++;
 			k++;
 		}
@@ -63,7 +63,7 @@ public class SortDescending {
 
 			// Merge the sorted halves
 			
-				merge(notes, left, mid, right);
+				merge(notes, right, mid, left);
 			
 
 		}
