@@ -7,8 +7,8 @@ import com.greatlearning.models.Stocks;
 public class StockerService {
 
 	static Stocks stocks = new Stocks();
-	static SortDescending sortD;
-	static SortAscending sortA;
+	static SortDescending sortD = new SortDescending();
+	static SortAscending sortA = new SortAscending();
 
 	public static void stocksInAscendingOrder() {
 		sortA.sort(stocks.getStockPrice(), 0, stocks.getStockPrice().size() - 1);

@@ -1,7 +1,9 @@
 package com.greatlearning.driver;
 
+import java.util.HashMap;
 import java.util.Scanner;
 import com.greatlearning.models.Stocks;
+import com.greatlearning.services.SortAscending;
 import com.greatlearning.services.StockerService;
 
 public class Driver {
@@ -9,6 +11,7 @@ public class Driver {
 	static Scanner sc = new Scanner(System.in);
 	static Stocks stocks = new Stocks();
 	static StockerService stockerService = new StockerService();
+	static SortAscending sortA = new SortAscending();
 
 	static int displayMenu() {
 		System.out.println("-----------------------------");
@@ -27,8 +30,18 @@ public class Driver {
 	}
 
 	public static void main(String[] args) {
-
+		
+		HashMap<Integer, Double> hs = new HashMap<Integer, Double>();
+		hs.put(1, 19.00);
+		hs.put(2, 34.00);
+		hs.put(3, 53.00);
+		hs.put(4, 66.00);
+		hs.put(5, 28.00);
+		
+	
 		System.out.println("enter the no of companies");
+		
+		
 
 		int numberOfCompanies = sc.nextInt();
 
