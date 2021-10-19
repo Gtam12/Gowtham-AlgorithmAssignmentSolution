@@ -63,7 +63,7 @@ public class SortDescending {
 
 			// Merge the sorted halves
 			
-				merge(notes, right, mid, left);
+				merge(notes, left, mid, right);
 			
 
 		}
