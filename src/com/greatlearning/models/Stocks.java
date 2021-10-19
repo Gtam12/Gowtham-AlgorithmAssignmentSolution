@@ -14,10 +14,9 @@ public class Stocks {
 	}
 
 	public void setStockPrice(int size,double stockPrice) {	
-		for(int i=0; i<size; i++)
-		{
-		this.stockPrice.put(i, stockPrice);	
-		}
+		
+		this.stockPrice.put(size, stockPrice);	
+		
 	}
 
 	public HashMap<Integer, String> isPriceHigherThanYesterday() {
@@ -25,10 +24,9 @@ public class Stocks {
 	}
 
 	public void setPriceHigherThanYesterday(int size, String isPriceHigherThanYesterday) {
-		for(int i=0;i<size;i++)
-		{
-		this.isPriceHigherThanYesterday.put(i, isPriceHigherThanYesterday);
-		}
+		
+		this.isPriceHigherThanYesterday.put(size, isPriceHigherThanYesterday);
+		
 	}
 	
 	
