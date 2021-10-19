@@ -1,6 +1,6 @@
 package com.greatlearning.driver;
 
-import java.util.HashMap;
+
 import java.util.Scanner;
 import com.greatlearning.models.Stocks;
 import com.greatlearning.services.SortAscending;
@@ -51,28 +51,26 @@ public class Driver {
 			return;
 
 		case 1:
-			StockerService.stocksInAscendingOrder();
-			System.out.println(stocks.getStockPrice());
-			System.out.println(StockerService.isPriceHigher());
+			stockerService.stocksInAscendingOrder(stocks);
+			System.out.println(stockerService.isPriceHigher(stocks));
 			break;
 		case 2:
-			StockerService.stocksInDescendingOrder();
-			System.out.println(stocks.getStockPrice());
-			System.out.println(StockerService.isPriceHigher());
+			stockerService.stocksInDescendingOrder(stocks);
+			System.out.println(stockerService.isPriceHigher(stocks));
 			break;
 
 		case 3:
-			StockerService.priceIncreasedStocks();
+			stockerService.priceIncreasedStocks(stocks);
 			break;
 
 		case 4:
-			StockerService.priceDecreasedStocks();
+			stockerService.priceDecreasedStocks(stocks);
 			break;
 
 		case 5:
 			System.out.println("Enter the stock to search");
 			double key = sc.nextDouble();
-			StockerService.isStockAvailableInPortfolio(key);
+			stockerService.isStockAvailableInPortfolio(key,stocks);
 			break;
 
 		default:
